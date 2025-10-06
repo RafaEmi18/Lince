@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_django
+    restart: always
+    environment:
+      POSTGRES_ROOT_PASSWORD: django_pass
+      POSTGRES_DB: django_db
+      POSTGRES_USER: django_user
+      POSTGRES_PASSWORD: djangopass
+      LANG: es_ES.UTF-8
+      LC_ALL: es_ES.UTF-8
+    ports:
+      - "5432:5432"  # expone el puerto a tu
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
