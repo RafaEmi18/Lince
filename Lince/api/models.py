@@ -10,7 +10,7 @@ class InformeTrimestral(models.Model):
         OCTUBRE_DICIEMBRE = 'oct-dic','Octubre-Diciembre'
 
     id = models.AutoField(primary_key=True)
-    work_area=models.CharField()
+    work_area=models.CharField(max_length=100) 
     trimester = models.CharField(
         max_length=7,
         choices=Trimestre.choices,
@@ -24,7 +24,7 @@ class InformeTrimestral(models.Model):
     
 
 
-    created_by = models.CharField()
+    created_by = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     vo_bo = models.CharField(max_length=50, null=True, blank=True)
 
